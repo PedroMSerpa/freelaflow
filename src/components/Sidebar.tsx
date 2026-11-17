@@ -164,13 +164,6 @@ export default function Sidebar({
           role="region"
           aria-label="Navegação e informações do workspace"
         >
-          <div className="workspace">
-            <span className="workspace-avatar">{avatar}</span>
-            <div>
-              {userName}
-              <small>Workspace local · demonstração</small>
-            </div>
-          </div>
           <span className="nav-label">WORKSPACE</span>
           <nav aria-label="Seções do workspace">
             {pages.map(({ name, icon: Icon }) => (
