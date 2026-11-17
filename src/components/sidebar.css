@@ -1,0 +1,290 @@
+.app {
+  --sidebar-width: 244px;
+}
+.app .sidebar {
+  width: var(--sidebar-width);
+  height: 100dvh;
+  padding: 22px 18px 0;
+  overflow: hidden;
+  gap: 0;
+  transition:
+    width 0.24s ease,
+    transform 0.24s ease;
+}
+.app .main-wrap {
+  margin-left: var(--sidebar-width);
+  min-width: 0;
+  transition: margin-left 0.24s ease;
+}
+.app .sidebar-header {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-height: 44px;
+}
+.app .sidebar .brand {
+  padding: 0 6px;
+  min-width: 0;
+  font-size: 24px;
+}
+.app .sidebar .brand-icon {
+  flex-shrink: 0;
+}
+.sidebar-brand-text {
+  display: flex;
+  align-items: center;
+}
+.sidebar-brand-text sup {
+  font-size: 9px;
+  letter-spacing: 0;
+  align-self: flex-start;
+  margin: 3px 0 0 3px;
+}
+.app .sidebar-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  padding: 15px 5px 8px;
+  gap: 8px;
+}
+.sidebar-controls > span {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #9ba8c7;
+}
+.app .sidebar-close {
+  display: none;
+  margin-left: auto;
+}
+.app .sidebar-collapse {
+  padding: 8px;
+  border: 1px solid #303a56;
+  color: #b3c0d4;
+  background: #1b2235;
+}
+.app .sidebar-collapse:hover {
+  background: #313149;
+  color: #f8a2d3;
+}
+.app .sidebar-scroll {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #586490 transparent;
+  padding: 0 4px 18px;
+  margin: 0 -4px;
+  scrollbar-gutter: stable;
+}
+.sidebar-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #586490;
+  border-radius: 8px;
+}
+.app .sidebar-scroll > * {
+  flex-shrink: 0;
+}
+.app .sidebar-scroll:focus-visible {
+  outline-offset: -2px;
+  border-radius: 7px;
+}
+.app .sidebar .workspace {
+  margin: 10px 0 25px;
+  gap: 10px;
+  font-size: 11px;
+  padding: 12px 10px;
+}
+.app .sidebar .workspace-avatar,
+.app .sidebar .profile-avatar {
+  flex-shrink: 0;
+}
+.app .sidebar .workspace > div,
+.app .sidebar .profile-details {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.app .sidebar .nav-label {
+  display: block;
+  margin-bottom: 12px;
+}
+.app .sidebar .nav-item {
+  min-height: 44px;
+  gap: 12px;
+  padding: 12px;
+  font-size: 12px;
+}
+.app .sidebar .nav-item > svg {
+  flex-shrink: 0;
+}
+.app .sidebar-bottom {
+  margin-top: auto;
+  padding-top: 32px;
+}
+.app .sidebar-footer {
+  flex-shrink: 0;
+  padding: 0 0 max(15px, env(safe-area-inset-bottom));
+  background: #121727;
+}
+.app .sidebar-footer .profile {
+  padding-top: 16px;
+  gap: 10px;
+  min-height: 63px;
+}
+.app .sidebar-footer .profile-details {
+  flex: 1;
+}
+.app .sidebar-footer .logout-button {
+  flex-shrink: 0;
+  min-width: 32px;
+  min-height: 36px;
+}
+.app.sidebar-collapsed {
+  --sidebar-width: 80px;
+}
+.app.sidebar-collapsed .sidebar {
+  padding: 22px 10px 0;
+}
+.app.sidebar-collapsed .sidebar .brand {
+  padding: 0;
+  justify-content: center;
+  width: 100%;
+}
+.app.sidebar-collapsed .sidebar .brand-icon {
+  margin-right: 0;
+}
+.app.sidebar-collapsed .sidebar-brand-text,
+.app.sidebar-collapsed .sidebar-controls > span,
+.app.sidebar-collapsed .workspace,
+.app.sidebar-collapsed .nav-label,
+.app.sidebar-collapsed .nav-text,
+.app.sidebar-collapsed .nav-count,
+.app.sidebar-collapsed .little-note,
+.app.sidebar-collapsed .github-link,
+.app.sidebar-collapsed .profile-details {
+  display: none;
+}
+.app.sidebar-collapsed .sidebar-controls {
+  justify-content: center;
+  padding: 15px 0 14px;
+}
+.app.sidebar-collapsed .sidebar .nav-item {
+  justify-content: center;
+  position: relative;
+  padding: 13px 0;
+  margin: 5px 0;
+}
+.app.sidebar-collapsed .nav-dot {
+  position: absolute;
+  right: 5px;
+  width: 4px;
+  height: 4px;
+}
+.app.sidebar-collapsed .sidebar-footer .profile {
+  flex-direction: column;
+  padding-top: 14px;
+  gap: 8px;
+}
+.app.sidebar-collapsed .sidebar-footer .logout-button {
+  margin: 0;
+}
+@media (max-width: 1200px) and (min-width: 701px) {
+  .app {
+    --sidebar-width: 220px;
+  }
+  .app .sidebar {
+    padding-inline: 14px;
+  }
+  .app .sidebar .brand {
+    font-size: 22px;
+  }
+}
+@media (max-width: 700px) {
+  .app,
+  .app.sidebar-collapsed {
+    --sidebar-width: 0px;
+  }
+  .app .sidebar,
+  .app.sidebar-collapsed .sidebar {
+    width: min(300px, calc(100vw - 44px));
+    padding: 20px 18px 0;
+    visibility: hidden;
+    transition:
+      transform 0.24s ease,
+      visibility 0.24s;
+  }
+  .app .sidebar.open {
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .app .sidebar-close {
+    display: flex;
+    min-height: 40px;
+    min-width: 40px;
+  }
+  .app .sidebar-controls {
+    display: none;
+  }
+  .app .sidebar .brand,
+  .app.sidebar-collapsed .sidebar .brand {
+    width: auto;
+    justify-content: flex-start;
+    font-size: 24px;
+  }
+  .app.sidebar-collapsed .sidebar .brand-icon {
+    margin-right: 10px;
+  }
+  .app.sidebar-collapsed .sidebar-brand-text {
+    display: flex;
+  }
+  .app.sidebar-collapsed .workspace {
+    display: flex;
+  }
+  .app.sidebar-collapsed .nav-label,
+  .app.sidebar-collapsed .nav-text,
+  .app.sidebar-collapsed .nav-count,
+  .app.sidebar-collapsed .little-note,
+  .app.sidebar-collapsed .profile-details {
+    display: block;
+  }
+  .app.sidebar-collapsed .github-link {
+    display: flex;
+  }
+  .app .sidebar .workspace {
+    margin-top: 24px;
+  }
+  .app .sidebar .nav-item,
+  .app.sidebar-collapsed .sidebar .nav-item {
+    justify-content: flex-start;
+    padding: 13px 12px;
+    min-height: 46px;
+    margin: 4px 0;
+  }
+  .app.sidebar-collapsed .nav-dot {
+    position: static;
+    margin-left: auto;
+    width: 6px;
+    height: 6px;
+  }
+  .app .sidebar-footer .profile,
+  .app.sidebar-collapsed .sidebar-footer .profile {
+    flex-direction: row;
+    padding-top: 16px;
+    gap: 10px;
+  }
+  .app.sidebar-collapsed .sidebar-footer .logout-button {
+    margin-left: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app .sidebar,
+  .app .main-wrap {
+    transition: none;
+  }
+}

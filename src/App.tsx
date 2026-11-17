@@ -1,20 +1,15 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ArrowUpRight,
   ArrowRight,
   Plus,
-  LayoutDashboard,
   Layers,
   CheckCheck,
-  Users,
   Wallet,
   Search,
-  ChevronDown,
   Command,
-  Sparkles,
   ArrowDownLeft,
   CalendarDays,
-  ExternalLink,
   Download,
   Menu,
   X,
@@ -24,14 +19,8 @@ import {
 } from 'lucide-react';
 import { initials } from './lib/session';
 import ProjectDialog from './components/ProjectDialog';
+import Sidebar from './components/Sidebar';
 import { isProjectList, money, progress, seedProjects, stages, type Project } from './lib/projects';
-const pages = [
-  { name: 'Visão geral', icon: LayoutDashboard },
-  { name: 'Projetos', icon: Layers },
-  { name: 'Tarefas', icon: CheckCheck },
-  { name: 'Clientes', icon: Users },
-  { name: 'Financeiro', icon: Wallet },
-];
 const storageKey = 'freelaflow:projects:v1';
 function load() {
   try {
@@ -59,6 +48,21 @@ export default function App({ userName, onLogout }: { userName: string; onLogout
   const [dialog, setDialog] = useState<Project | 'new' | null>(null);
   const [toast, setToast] = useState('');
   const [mobile, setMobile] = useState(false);
+  const closeSidebar = useCallback(() => setMobile(false), []);
+  const [collapsed, setCollapsed] = useState(() => {
+    try {
+      return localStorage.getItem('freelaflow:sidebar-collapsed') === 'true';
+    } catch {
+      return false;
+    }
+  });
+  useEffect(() => {
+    try {
+      localStorage.setItem('freelaflow:sidebar-collapsed', String(collapsed));
+    } catch {
+      /* Preference remains available for this session. */
+    }
+  }, [collapsed]);
   useEffect(() => {
     try {
       localStorage.setItem(storageKey, JSON.stringify(projects));
@@ -160,97 +164,29 @@ export default function App({ userName, onLogout }: { userName: string; onLogout
     c.toLowerCase().includes(search.toLowerCase()),
   );
   return (
-    <div className="app">
+    <div className={`app ${collapsed ? 'sidebar-collapsed' : ''}`}>
       <a href="#main" className="skip-link">
         Pular para conteúdo
       </a>
-      {mobile && (
-        <button
-          className="sidebar-scrim"
-          aria-label="Fechar menu"
-          onClick={() => setMobile(false)}
-        />
-      )}
-      <aside className={mobile ? 'sidebar open' : 'sidebar'}>
-        <a
-          className="brand"
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            navigate('Visão geral');
-          }}
-        >
-          <span className="brand-icon">
-            f<span>↗</span>
-          </span>
-          freela<span className="brand-light">flow</span>
-          <span className="brand-dot">®</span>
-        </a>
-        <div className="workspace">
-          <span className="workspace-avatar">{avatar}</span>
-          <div>
-            {userName}
-            <small>Workspace local · demonstração</small>
-          </div>
-          <ChevronDown size={14} />
-        </div>
-        <span className="nav-label">WORKSPACE</span>
-        <nav>
-          {pages.map(({ name, icon: Icon }) => (
-            <button
-              key={name}
-              className={page === name ? 'nav-item active' : 'nav-item'}
-              onClick={() => navigate(name)}
-            >
-              <Icon size={18} />
-              {name}
-              {name === 'Projetos' && <span className="nav-count">{active.length}</span>}
-              {page === name && <span className="nav-dot" />}
-            </button>
-          ))}
-        </nav>
-        <div className="sidebar-bottom">
-          <div className="little-note">
-            <Sparkles size={20} />
-            <p>
-              Grandes ideias.
-              <br />
-              <strong>Um passo de cada vez.</strong>
-            </p>
-            <span>Seu próximo nível começa aqui.</span>
-          </div>
-          <a
-            className="github-link"
-            href="https://github.com/PedroMSerpa"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Feito por Pedro Serpa
-            <ExternalLink size={13} />
-          </a>
-          <div className="profile">
-            <span className="profile-avatar">{avatar}</span>
-            <div>
-              {userName}
-              <small>Freelancer & criador</small>
-            </div>
-            <button
-              className="icon-button logout-button"
-              onClick={onLogout}
-              aria-label="Sair do workspace"
-              title="Sair do workspace"
-            >
-              <LogOut size={16} />
-            </button>
-          </div>
-        </div>
-      </aside>
+      <Sidebar
+        page={page}
+        projectCount={active.length}
+        userName={userName}
+        mobile={mobile}
+        onClose={closeSidebar}
+        onNavigate={navigate}
+        onLogout={onLogout}
+        collapsed={collapsed}
+        onToggle={() => setCollapsed((value) => !value)}
+      />
       <div className="main-wrap">
         <header className="topbar">
           <div className="breadcrumb">
             <button
               className="mobile-menu icon-button"
               aria-label="Abrir menu"
+              aria-controls="workspace-sidebar"
+              aria-expanded={mobile}
               onClick={() => setMobile(true)}
             >
               <Menu size={20} />

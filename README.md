@@ -24,6 +24,7 @@ O freelancer precisa criar e também administrar o próprio trabalho. O FreelaFl
 - Interface responsiva, navegação por teclado, diálogo nativo e respeito à preferência por movimento reduzido.
 - Página de apresentação com arte procedural em SVG, etapas de uso e perguntas frequentes.
 - Entrada local pelo nome, sessão por aba e saída do workspace, sem solicitar senha.
+- Sidebar com rolagem independente, perfil fixo, recolhimento persistente e menu móvel com navegação por teclado.
 
 ## Executar
 
