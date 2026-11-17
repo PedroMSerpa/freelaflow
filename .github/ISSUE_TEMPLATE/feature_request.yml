@@ -1,0 +1,16 @@
+name: Sugerir melhoria
+description: Proponha uma melhoria com um problema concreto.
+title: '[Feature]: '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Qual problema precisa ser resolvido?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Comportamento proposto
+    validations:
+      required: true
