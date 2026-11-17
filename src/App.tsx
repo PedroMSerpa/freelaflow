@@ -20,6 +20,7 @@ import {
 import { initials } from './lib/session';
 import ProjectDialog from './components/ProjectDialog';
 import Sidebar from './components/Sidebar';
+import LogoMark from './components/LogoMark';
 import { isProjectList, money, progress, seedProjects, stages, type Project } from './lib/projects';
 const storageKey = 'freelaflow:projects:v1';
 function load() {
@@ -280,7 +281,7 @@ export default function App({ userName, onLogout }: { userName: string; onLogout
                   <div className="orbit orbit-two" />
                   <div className="orbit orbit-three" />
                   <div className="orbit-center">
-                    f<span>↗</span>
+                    <LogoMark />
                   </div>
                   <div className="floating-label label-one">
                     <CheckCircle2 size={15} />

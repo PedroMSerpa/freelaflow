@@ -69,6 +69,10 @@ Identidade própria com azul profundo, cinza azulado e rosa, tipografia Manrope/
 
 As fontes são carregadas pelo Google Fonts, com fallback para fontes locais. Os ícones são do Lucide, sob licença ISC. A ilustração e o símbolo do aplicativo são feitos em CSS/SVG.
 
+O monograma **FW** é um desenho vetorial original com traços arredondados, contorno claro e emblema rosa sobre azul. A direção combina a força de um emblema com a fluidez de um logotipo contínuo, sem reutilizar símbolos ou letras das marcas citadas como referência. O arquivo único `public/fw-mark.svg` é usado na apresentação, entrada, painel, sidebar e favicon.
+
+[Ver o monograma ampliado](docs/screenshots/fw-mark.png) · [Arquivo vetorial SVG](public/fw-mark.svg)
+
 ## Dados e limites
 
 Os dados iniciais são fictícios. A tela de entrada usa apenas o nome para personalizar a demonstração. A sessão fica em `sessionStorage` (por aba), sem senha, autenticação ou controle de acesso. Os projetos ficam no `localStorage` do navegador atual e são compartilhados entre os nomes usados no dispositivo. Sair encerra a sessão local, mas preserva os projetos. Não existe sincronização entre dispositivos. Limpar os dados do navegador apaga os registros; a exportação permite conservar uma cópia, mas a importação ainda não está implementada. O controle financeiro registra informações manualmente e não processa pagamentos.

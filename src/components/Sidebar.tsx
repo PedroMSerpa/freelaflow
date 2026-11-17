@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { initials } from '../lib/session';
 import './sidebar.css';
+import LogoMark from './LogoMark';
 
 const pages = [
   { name: 'Visão geral', icon: LayoutDashboard },
@@ -133,9 +134,7 @@ export default function Sidebar({
               onNavigate('Visão geral');
             }}
           >
-            <span className="brand-icon">
-              f<span>↗</span>
-            </span>
+            <LogoMark className="brand-icon" />
             <span className="sidebar-brand-text">
               freela<span className="brand-light">flow</span>
               <sup>®</sup>
