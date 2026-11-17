@@ -15,13 +15,15 @@ import {
 } from 'lucide-react';
 import App from './App';
 import FlowSculpture from './components/FlowSculpture';
+import LogoMark from './components/LogoMark';
 import { clearSession, readSession, saveSession, type LocalSession } from './lib/session';
 import './experience.css';
 
 function Brand() {
   return (
     <a className="ff-brand" href="#/" aria-label="FreelaFlow, início">
-      <span className="ff-mark">f↗</span>freela<span>flow</span>
+      <LogoMark className="ff-mark" />
+      freela<span>flow</span>
       <sup>®</sup>
     </a>
   );
