@@ -14,11 +14,13 @@ O localStorage é adequado para demonstração e dados não sensíveis. Não ofe
 
 ## Interface
 
+A camada `Experience.tsx` organiza as rotas por hash: `#/` (apresentação), `#/entrar` (entrada local) e `#/app` (workspace). Sem sessão local, a rota do workspace encaminha à entrada. Isso organiza a experiência; não é uma barreira de segurança. O nome fica em `sessionStorage`, não há senha e os projetos continuam compartilhados no `localStorage`. A saída remove apenas a sessão. A arte `FlowSculpture` é um conjunto procedural de elipses SVG, com rotação e resposta ao ponteiro desativadas para movimento reduzido.
+
 CSS com tokens de cores, layouts em grid e breakpoints para desktop, tablet e celular. Animações usam transform e opacidade; `prefers-reduced-motion` as desativa. Formulário em `dialog` nativo para foco modal e fechamento com Escape. Campos possuem rótulos e validação HTML. Ícones acionáveis possuem nomes acessíveis.
 
 ## Qualidade
 
-TypeScript em modo estrito. Testes cobrem validação de dados persistidos e cálculo de progresso. CI executa instalação pelo lockfile, testes e compilação. A validação visual e os testes ponta a ponta ainda precisam ser realizados em navegador antes da publicação final.
+TypeScript em modo estrito. Testes cobrem validação de dados persistidos e cálculo de progresso. CI executa instalação pelo lockfile, formatação, testes e compilação. A nova experiência foi verificada no Chromium em desktop (1440 × 1000) e celular (390 × 844): entrada, sessão após recarga, saída, navegação mobile, perguntas frequentes, ausência de rolagem horizontal e movimento reduzido. Também foram verificados criação de projeto, conclusão de tarefa, registro de recebimento e persistência após recarga. Essa verificação local não equivale a uma suíte de regressão ponta a ponta mantida no repositório. As capturas reais ficam em `docs/screenshots`.
 
 ## Evolução
 

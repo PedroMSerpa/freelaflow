@@ -20,7 +20,9 @@ import {
   X,
   Circle,
   CheckCircle2,
+  LogOut,
 } from 'lucide-react';
+import { initials } from './lib/session';
 import ProjectDialog from './components/ProjectDialog';
 import { isProjectList, money, progress, seedProjects, stages, type Project } from './lib/projects';
 const pages = [
@@ -48,7 +50,8 @@ function dateLabel(date: string) {
     .toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })
     .replace('.', '');
 }
-export default function App() {
+export default function App({ userName, onLogout }: { userName: string; onLogout: () => void }) {
+  const avatar = initials(userName);
   const [projects, setProjects] = useState<Project[]>(load);
   const [page, setPage] = useState('Visão geral');
   const [search, setSearch] = useState('');
@@ -184,9 +187,10 @@ export default function App() {
           <span className="brand-dot">®</span>
         </a>
         <div className="workspace">
-          <span className="workspace-avatar">PS</span>
+          <span className="workspace-avatar">{avatar}</span>
           <div>
-            Workspace do Pedro<small>Espaço pessoal</small>
+            {userName}
+            <small>Workspace local · demonstração</small>
           </div>
           <ChevronDown size={14} />
         </div>
@@ -225,11 +229,19 @@ export default function App() {
             <ExternalLink size={13} />
           </a>
           <div className="profile">
-            <span className="profile-avatar">PS</span>
+            <span className="profile-avatar">{avatar}</span>
             <div>
-              Pedro Serpa<small>Freelancer & criador</small>
+              {userName}
+              <small>Freelancer & criador</small>
             </div>
-            <span className="online-dot" />
+            <button
+              className="icon-button logout-button"
+              onClick={onLogout}
+              aria-label="Sair do workspace"
+              title="Sair do workspace"
+            >
+              <LogOut size={16} />
+            </button>
           </div>
         </div>
       </aside>
@@ -259,7 +271,15 @@ export default function App() {
             >
               <Download size={17} />
             </button>
-            <span className="top-avatar">PS</span>
+            <span className="top-avatar">{avatar}</span>
+            <button
+              className="icon-button"
+              onClick={onLogout}
+              aria-label="Sair do workspace"
+              title="Sair"
+            >
+              <LogOut size={17} />
+            </button>
           </div>
         </header>
         <main id="main">
