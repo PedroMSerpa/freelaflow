@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <path d="M46 46C24 46 12 33 12 14Q12 12 14 12C33 12 46 24 46 46Z" fill="#ff488b"/>
+  <path d="M72 10L90 28L72 46L54 28L72 10Z" fill="#ff488b"/>
+  <path d="M46 46C24 46 12 33 12 14Q12 12 14 12C33 12 46 24 46 46Z" fill="#f480c0" transform="rotate(180 50 50)"/>
+  <path d="M46 46C24 46 12 33 12 14Q12 12 14 12C33 12 46 24 46 46Z" fill="#f8a2d3" transform="rotate(270 50 50)"/>
+</svg>
