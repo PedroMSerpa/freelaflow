@@ -1,0 +1,240 @@
+﻿.app[data-theme] {
+  --workspace-text: #e5e8ef;
+  --workspace-muted: #a4afcb;
+  --workspace-surface: #181e31;
+  --workspace-highlight: #f8a2d3;
+  --workspace-tint: #ff488b14;
+  color-scheme: dark;
+}
+.app[data-theme='light'] {
+  --workspace-text: #172b76;
+  --workspace-muted: #586490;
+  --workspace-surface: #ffffff;
+  --workspace-highlight: #ae235e;
+  --workspace-tint: #ff488b0e;
+  --accent: #ae235e;
+  --muted: #586490;
+  --border: #d6deec;
+  --panel: #ffffff;
+  color: var(--workspace-text);
+  background: #f1f4f9;
+  color-scheme: light;
+}
+.app[data-theme='light'] .sidebar,
+.app[data-theme='light'] .sidebar-footer {
+  background: #fafbfe;
+}
+.app[data-theme='light'] .topbar {
+  background: #fafbfe;
+}
+.app[data-theme='light'] .project-card,
+.app[data-theme='light'] .panel,
+.app[data-theme='light'] .stat,
+.app[data-theme='light'] .kanban-card {
+  background: #fff;
+  box-shadow: 0 4px 20px #172b7603;
+}
+.app[data-theme='light'] .project-card:hover {
+  border-color: #a4afcb;
+  box-shadow: 0 10px 30px #172b760c;
+}
+.app[data-theme='light'] .kanban-column {
+  background: #e9eef7;
+}
+.app[data-theme='light'] .kanban-card,
+.app[data-theme='light'] .task-row,
+.app[data-theme='light'] .badge,
+.app[data-theme='light'] .search kbd,
+.app[data-theme='light'] .task-editor {
+  border-color: var(--border);
+}
+.app[data-theme='light'] .breadcrumb,
+.app[data-theme='light'] .slash,
+.app[data-theme='light'] .icon-button,
+.app[data-theme='light'] .nav-item,
+.app[data-theme='light'] .nav-label,
+.app[data-theme='light'] .sidebar-controls > span,
+.app[data-theme='light'] .profile small,
+.app[data-theme='light'] .github-link,
+.app[data-theme='light'] .page-heading p,
+.app[data-theme='light'] .eyebrow,
+.app[data-theme='light'] .stat > div,
+.app[data-theme='light'] .stat small,
+.app[data-theme='light'] .tabs button,
+.app[data-theme='light'] .search,
+.app[data-theme='light'] .search input::placeholder,
+.app[data-theme='light'] .card-arrow,
+.app[data-theme='light'] .client-label,
+.app[data-theme='light'] .client-label > span,
+.app[data-theme='light'] .project-progress,
+.app[data-theme='light'] .card-bottom > span,
+.app[data-theme='light'] .task-row small,
+.app[data-theme='light'] .task-date,
+.app[data-theme='light'] .muted,
+.app[data-theme='light'] .move-stage,
+.app[data-theme='light'] th,
+.app[data-theme='light'] td small,
+.app[data-theme='light'] .main-footer,
+.app[data-theme='light'] .footer-star,
+.app[data-theme='light'] .count {
+  color: #586490;
+}
+.app[data-theme='light'] .breadcrumb strong,
+.app[data-theme='light'] .project-progress > b,
+.app[data-theme='light'] .card-bottom > b,
+.app[data-theme='light'] .check-task,
+.app[data-theme='light'] .text-button,
+.app[data-theme='light'] .page-heading h1 > span {
+  color: #334779;
+}
+.app[data-theme='light'] .nav-item:hover,
+.app[data-theme='light'] .icon-button:hover {
+  background: #e7edf6;
+  color: #172b76;
+}
+.app[data-theme='light'] .nav-item.active {
+  background: #fce7f1;
+  color: #a62360;
+}
+.app[data-theme='light'] .nav-count {
+  background: #e8edf7;
+  color: #586490;
+}
+.app[data-theme='light'] .tabs button.selected {
+  color: #172b76;
+  background: #dfe7f4;
+}
+.app[data-theme='light'] .tabs button:hover,
+.app[data-theme='light'] .text-button:hover {
+  color: #a62360;
+}
+.app[data-theme='light'] .sidebar-collapse {
+  color: #586490;
+  background: #eef2f8;
+  border-color: #d6deec;
+}
+.app[data-theme='light'] .little-note {
+  background: linear-gradient(125deg, #f8edf5, #eef2f8);
+  border-color: #e2dce9;
+}
+.app[data-theme='light'] .little-note > span {
+  color: #667296;
+}
+.app[data-theme='light'] .little-note > svg {
+  color: #b32968;
+}
+.app[data-theme='light'] .primary {
+  color: #172b76;
+  background: #f8a2d3;
+}
+.app[data-theme='light'] .primary:hover {
+  background: #fdcdeb;
+}
+.app[data-theme='light'] .green {
+  color: #ad2664;
+}
+.app[data-theme='light'] .focus-card {
+  background: radial-gradient(ellipse at 100% 0, #f9e4f0, #edf1fa);
+  border-color: #dfd5e6;
+}
+.app[data-theme='light'] .focus-card p,
+.app[data-theme='light'] .focus-footer,
+.app[data-theme='light'] .focus-star {
+  color: #7a4c78;
+}
+.app[data-theme='light'] .task-toggle {
+  color: #8793b2;
+}
+.app[data-theme='light'] .task-toggle:hover {
+  color: #b32968;
+}
+.app[data-theme='light'] .progress-track {
+  background: #e9edf5;
+}
+.app[data-theme='light'] .purple .progress-track > div {
+  background: #9170b1;
+}
+.app[data-theme='light'] .orange .progress-track > div {
+  background: #b37e40;
+}
+.app[data-theme='light'] .blue .progress-track > div {
+  background: #568b9c;
+}
+.app[data-theme='light'] .project-symbol.purple {
+  background: #eee5f7;
+  color: #724493;
+}
+.app[data-theme='light'] .project-symbol.orange {
+  background: #faeddc;
+  color: #8d591e;
+}
+.app[data-theme='light'] .project-symbol.blue {
+  background: #dfedf4;
+  color: #32677c;
+}
+.app[data-theme='light'] .project-symbol.pink {
+  background: #fbe4ef;
+  color: #a03670;
+}
+.app[data-theme='light'] .badge {
+  color: #586490;
+}
+.app[data-theme='light'] .badge.complete {
+  color: #9f2765;
+}
+.app[data-theme='light'] .payment,
+.app[data-theme='light'] .payment.paid {
+  color: #99255e;
+  border-color: #edbdd3;
+  background: #fcebf3;
+}
+.app[data-theme='light'] .check-task.done span {
+  color: #6b7798;
+}
+.app[data-theme='light'] .stage-2 {
+  background: #c23a7a;
+}
+.app[data-theme='light'] .empty-state {
+  color: #586490;
+  border-color: #b9c5dd;
+}
+.app[data-theme='light'] dialog {
+  background: #fff;
+  color: #172b76;
+  border-color: #c3cee2;
+  box-shadow: 0 25px 100px #172b762a;
+}
+.app[data-theme='light'] dialog label {
+  color: #586490;
+}
+.app[data-theme='light'] input,
+.app[data-theme='light'] select {
+  color-scheme: light;
+  color: #172b76;
+  background: #f7f9fc;
+  border-color: #d6deec;
+}
+.app[data-theme='light'] input::placeholder {
+  color: #7582a3;
+}
+.app[data-theme='light'] input[type='checkbox'] {
+  accent-color: #b32968;
+}
+.app[data-theme='light'] .search input,
+.app[data-theme='light'] .task-add > input {
+  background: transparent;
+}
+.app[data-theme='light'] .danger {
+  color: #b54150;
+}
+.app[data-theme='light'] .secondary {
+  border-color: #b9c5dd;
+}
+.app[data-theme='light'] .toast {
+  color: #83214e;
+  background: #fff2f8;
+  border-color: #e6b7ce;
+}
+.app[data-theme='light'] .stat-dot {
+  background: #a1acca;
+}

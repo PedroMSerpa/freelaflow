@@ -428,10 +428,10 @@ function Entry({ onEnter }: { onEnter: (session: LocalSession) => void }) {
               <input
                 id="entry-name"
                 name="name"
-                autoComplete="given-name"
+                autoComplete="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Seu nome"
+                placeholder="Seu nome completo"
                 required
                 maxLength={60}
                 pattern=".*\S.*"

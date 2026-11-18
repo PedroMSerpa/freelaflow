@@ -12,7 +12,8 @@ import {
   PanelLeftOpen,
   X,
 } from 'lucide-react';
-import { initials } from '../lib/session';
+import ProfileMenu from './ProfileMenu';
+import type { Theme } from '../lib/useTheme';
 import './sidebar.css';
 import LogoMark from './LogoMark';
 
@@ -25,6 +26,8 @@ const pages = [
 ];
 
 interface Props {
+  theme: Theme;
+  onThemeChange: (theme: Theme) => void;
   page: string;
   projectCount: number;
   userName: string;
@@ -37,6 +40,8 @@ interface Props {
 }
 
 export default function Sidebar({
+  theme,
+  onThemeChange,
   page,
   projectCount,
   userName,
@@ -49,7 +54,6 @@ export default function Sidebar({
 }: Props) {
   const panel = useRef<HTMLElement>(null);
   const [small, setSmall] = useState(() => window.matchMedia('(max-width: 700px)').matches);
-  const avatar = initials(userName);
   useEffect(() => {
     const content = panel.current?.querySelector<HTMLElement>('.sidebar-scroll');
     if (content) content.scrollTop = 0;
@@ -79,6 +83,7 @@ export default function Sidebar({
     }, 260);
     function keyboard(event: KeyboardEvent) {
       if (event.key === 'Escape') {
+        if (panel.current?.querySelector(':popover-open')) return;
         event.preventDefault();
         onClose();
       }
@@ -209,9 +214,12 @@ export default function Sidebar({
         </div>
         <div className="sidebar-footer">
           <div className="profile">
-            <span className="profile-avatar" title={userName}>
-              {avatar}
-            </span>
+            <ProfileMenu
+              userName={userName}
+              theme={theme}
+              onThemeChange={onThemeChange}
+              placement="sidebar"
+            />
             <div className="profile-details">
               {userName}
               <small>Freelancer & criador</small>

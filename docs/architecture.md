@@ -22,6 +22,8 @@ O componente `Sidebar` mantém cabeçalho e perfil fixos e usa uma região centr
 
 ## Qualidade
 
+O componente `ProfileMenu` compartilha as preferências entre os avatares do cabeçalho e da sidebar. Usa a API nativa de popover para permanecer visível sobre o painel, fechar por clique externo/Escape e devolver o foco ao acionador. A escolha de tema usa controles de rádio nativos. O hook `useTheme` mantém a preferência em `freelaflow:theme`; o atributo `data-theme` aplica as cores em todas as telas e formulários do workspace, sem alterar os projetos. A apresentação pública mantém sua identidade visual própria. Foram verificados persistência após recarga, navegação por teclado e posicionamento em desktop e celular.
+
 TypeScript em modo estrito. Testes cobrem validação de dados persistidos e cálculo de progresso. CI executa instalação pelo lockfile, formatação, testes e compilação. A nova experiência foi verificada no Chromium em desktop (1440 × 1000) e celular (390 × 844): entrada, sessão após recarga, saída, navegação mobile, perguntas frequentes, ausência de rolagem horizontal e movimento reduzido. Também foram verificados criação de projeto, conclusão de tarefa, registro de recebimento e persistência após recarga. Essa verificação local não equivale a uma suíte de regressão ponta a ponta mantida no repositório. As capturas reais ficam em `docs/screenshots`.
 
 ## Evolução

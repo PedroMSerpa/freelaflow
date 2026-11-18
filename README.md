@@ -31,6 +31,7 @@ Pensado para designers, desenvolvedores, criadores e prestadores de serviços qu
 - Página de apresentação com arte procedural em SVG, etapas de uso e perguntas frequentes.
 - Entrada local pelo nome, sessão por aba e saída do workspace, sem solicitar senha.
 - Sidebar com rolagem independente, perfil fixo, recolhimento persistente e menu móvel com navegação por teclado.
+- Menu de perfil com nome completo e seleção entre tema claro e escuro, com preferência salva no navegador.
 
 ## Começar a usar localmente
 
@@ -102,6 +103,8 @@ Os dados iniciais são fictícios. A tela de entrada usa apenas o nome para pers
 Veja [as decisões de arquitetura](docs/architecture.md) para conhecer a estrutura e a evolução técnica do produto.
 
 Capturas reais: [página de apresentação](docs/screenshots/landing.png), [entrada local](docs/screenshots/entry.png) e [workspace](docs/screenshots/workspace.png).
+
+[Ver o painel em tema claro e o menu de perfil](docs/screenshots/workspace-light.png).
 
 Para acompanhar o desenvolvimento, consulte os [pull requests](https://github.com/PedroMSerpa/freelaflow/pulls), o [histórico de commits](https://github.com/PedroMSerpa/freelaflow/commits/main) e o [guia de contribuição](CONTRIBUTING.md).
 
