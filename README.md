@@ -69,9 +69,9 @@ Identidade própria com azul profundo, cinza azulado e rosa, tipografia Manrope/
 
 As fontes são carregadas pelo Google Fonts, com fallback para fontes locais. Os ícones são do Lucide, sob licença ISC. A ilustração e o símbolo do aplicativo são feitos em CSS/SVG.
 
-O monograma **FW** é um desenho vetorial original com traços arredondados, contorno claro e emblema rosa sobre azul. A direção combina a força de um emblema com a fluidez de um logotipo contínuo, sem reutilizar símbolos ou letras das marcas citadas como referência. O arquivo único `public/fw-mark.svg` é usado na apresentação, entrada, painel, sidebar e favicon.
+O símbolo da marca é um desenho vetorial original, sem letras: três superfícies curvas e um losango destacado representam um espaço de criação com uma ideia ganhando direção. Usa a paleta rosa do produto, com azul nas aplicações de fundo. O componente `LogoMark` compartilha o mesmo SVG entre apresentação, entrada, painel e sidebar; o favicon aplica o símbolo sobre um fundo azul.
 
-[Ver o monograma ampliado](docs/screenshots/fw-mark.png) · [Arquivo vetorial SVG](public/fw-mark.svg)
+[Ver a identidade visual](docs/screenshots/brand-symbol.png) · [Símbolo SVG](public/brand/freelaflow-symbol.svg) · [Guia e arquivos para marketing](branding.md)
 
 ## Dados e limites
 

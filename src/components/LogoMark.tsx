@@ -1,11 +1,11 @@
 import './logo.css';
 
-/** Original FW monogram. Shared asset across the interface and browser icon. */
+/** Original abstract flow symbol; reusable vector asset for product and marketing. */
 export default function LogoMark({ className = '' }: { className?: string }) {
   return (
     <img
       className={`logo-mark ${className}`}
-      src={`${import.meta.env.BASE_URL}fw-mark.svg`}
+      src={`${import.meta.env.BASE_URL}brand/freelaflow-symbol.svg`}
       alt=""
       aria-hidden="true"
       width="40"
