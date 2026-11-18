@@ -10,11 +10,13 @@
 
 ![Apresentação do FreelaFlow com paleta azul e rosa e arte procedural](docs/screenshots/landing.png)
 
-Workspace para profissionais independentes acompanharem projetos, tarefas, clientes e recebimentos em um único lugar. Projeto de portfólio de [Pedro Serpa](https://github.com/PedroMSerpa), desenvolvido para a atividade AT2-N2 de Desenvolvimento de Sistema Web.
+Um workspace para profissionais independentes organizarem projetos, tarefas, clientes e recebimentos em um único lugar. Criado por [Pedro Serpa](https://github.com/PedroMSerpa) para quem quer dedicar mais tempo ao próprio trabalho e menos tempo a informações espalhadas.
 
-## A proposta
+## Mais clareza para trabalhar por conta própria
 
 O freelancer precisa criar e também administrar o próprio trabalho. O FreelaFlow conecta prazos, etapas e valores para reduzir a dispersão entre ferramentas. Um pagamento registrado aparece no resumo; uma tarefa concluída atualiza o progresso do projeto.
+
+Pensado para designers, desenvolvedores, criadores e prestadores de serviços que precisam acompanhar o trabalho do primeiro briefing à entrega.
 
 ## Funcionalidades
 
@@ -30,7 +32,7 @@ O freelancer precisa criar e também administrar o próprio trabalho. O FreelaFl
 - Entrada local pelo nome, sessão por aba e saída do workspace, sem solicitar senha.
 - Sidebar com rolagem independente, perfil fixo, recolhimento persistente e menu móvel com navegação por teclado.
 
-## Executar
+## Começar a usar localmente
 
 Requisitos: Node.js 22 ou superior e npm.
 
@@ -53,7 +55,11 @@ React 19 · TypeScript · Vite · Lucide · CSS · Vitest
 
 ```text
 src/
-  components/ProjectDialog.tsx  # Formulário acessível de projetos e tarefas
+  components/
+    LogoMark.tsx               # Símbolo compartilhado da marca
+    Sidebar.tsx                # Navegação responsiva e recolhível
+    ProjectDialog.tsx          # Formulário de projetos e tarefas
+    FlowSculpture.tsx          # Arte procedural em SVG
   lib/projects.ts              # Tipos, validação, dados de demonstração e cálculos
   lib/projects.test.ts         # Testes das regras de dados
   App.tsx                      # Telas, navegação e estado compartilhado
@@ -63,13 +69,14 @@ src/
   styles.css                   # Identidade visual e responsividade
 docs/
   architecture.md              # Decisões e limites da primeira versão
-  presentation.md              # Roteiro para demonstração
+public/brand/                  # Marca, favicon e arquivos para marketing
+branding.md                    # Guia de identidade visual
 .github/workflows/ci.yml       # Verificação em pushes e pull requests
 ```
 
 ## Design
 
-Identidade própria com azul profundo, cinza azulado e rosa, tipografia Manrope/DM Sans e arte procedural original em SVG. A [Cerebrium](https://cerebrium.ai/) serve como referência de paleta e direção editorial; a composição, os textos, a arte e o fluxo são próprios do FreelaFlow. Referências complementares de estudo: organização do [Linear](https://linear.app), contenção visual da [Vercel](https://vercel.com) e hierarquia de informações da [Stripe](https://stripe.com). Não há afiliação com essas marcas e nenhum código ou ativo visual delas foi reutilizado.
+Identidade própria com azul profundo, cinza azulado e rosa, tipografia Manrope/DM Sans e arte procedural em SVG. A interface combina uma apresentação clara do produto com um painel voltado ao acompanhamento diário do trabalho.
 
 As fontes são carregadas pelo Google Fonts, com fallback para fontes locais. Os ícones são do Lucide, sob licença ISC. A ilustração e o símbolo do aplicativo são feitos em CSS/SVG.
 
@@ -81,7 +88,7 @@ O símbolo da marca é um desenho vetorial original, sem letras: três superfíc
 
 **Arquivos para marketing:** [baixar o kit completo em ZIP](docs/freelaflow-brand-kit.zip), com SVGs, PNGs transparentes em 2048 px, versões monocromáticas, avatar e capa. O favicon também usa a nova marca, em versões SVG e PNG.
 
-## Dados e limites
+## Armazenamento e funcionamento
 
 Os dados iniciais são fictícios. A tela de entrada usa apenas o nome para personalizar a demonstração. A sessão fica em `sessionStorage` (por aba), sem senha, autenticação ou controle de acesso. Os projetos ficam no `localStorage` do navegador atual e são compartilhados entre os nomes usados no dispositivo. Sair encerra a sessão local, mas preserva os projetos. Não existe sincronização entre dispositivos. Limpar os dados do navegador apaga os registros; a exportação permite conservar uma cópia, mas a importação ainda não está implementada. O controle financeiro registra informações manualmente e não processa pagamentos.
 
@@ -90,9 +97,9 @@ Os dados iniciais são fictícios. A tela de entrada usa apenas o nome para pers
 - Importação validada de backups.
 - Autenticação e sincronização com backend.
 - Testes de interação e testes ponta a ponta.
-- URL da demonstração após publicação.
+- Disponibilização de uma versão pública para uso no navegador.
 
-Veja [as decisões de arquitetura](docs/architecture.md) e [o roteiro da apresentação](docs/presentation.md).
+Veja [as decisões de arquitetura](docs/architecture.md) para conhecer a estrutura e a evolução técnica do produto.
 
 Capturas reais: [página de apresentação](docs/screenshots/landing.png), [entrada local](docs/screenshots/entry.png) e [workspace](docs/screenshots/workspace.png).
 
@@ -100,4 +107,4 @@ Para acompanhar o desenvolvimento, consulte os [pull requests](https://github.co
 
 ## Autoria
 
-Pedro Serpa. Implementação desenvolvida com auxílio de IA, com decisões e limites documentados para estudo e evolução do projeto. Nenhuma licença de redistribuição foi definida nesta etapa.
+Criado e mantido por [Pedro Serpa](https://github.com/PedroMSerpa).
