@@ -26,7 +26,7 @@ Pensado para designers, desenvolvedores, criadores e prestadores de serviços qu
 - Quadro por etapas com seleção de status e checklist de tarefas.
 - Clientes agrupados automaticamente pelos projetos cadastrados.
 - Controle manual de recebimentos com atualização dos totais.
-- Persistência local e exportação de backup em JSON.
+- Persistência local dos projetos e tarefas.
 - Interface responsiva, navegação por teclado, diálogo nativo e respeito à preferência por movimento reduzido.
 - Página de apresentação com arte procedural em SVG, etapas de uso e perguntas frequentes.
 - Entrada local pelo nome, sessão por aba e saída do workspace, sem solicitar senha.
@@ -90,11 +90,11 @@ O símbolo da marca é um desenho vetorial original, sem letras: três superfíc
 
 ## Armazenamento e funcionamento
 
-Os dados iniciais são fictícios. A tela de entrada usa apenas o nome para personalizar a demonstração. A sessão fica em `sessionStorage` (por aba), sem senha, autenticação ou controle de acesso. Os projetos ficam no `localStorage` do navegador atual e são compartilhados entre os nomes usados no dispositivo. Sair encerra a sessão local, mas preserva os projetos. Não existe sincronização entre dispositivos. Limpar os dados do navegador apaga os registros; a exportação permite conservar uma cópia, mas a importação ainda não está implementada. O controle financeiro registra informações manualmente e não processa pagamentos.
+Os dados iniciais são fictícios. A tela de entrada usa apenas o nome para personalizar a demonstração. A sessão fica em `sessionStorage` (por aba), sem senha, autenticação ou controle de acesso. Os projetos ficam no `localStorage` do navegador atual e são compartilhados entre os nomes usados no dispositivo. Sair encerra a sessão local, mas preserva os projetos. Não existe sincronização entre dispositivos. Limpar os dados do navegador apaga os registros. O controle financeiro registra informações manualmente e não processa pagamentos.
 
 ## Próximos passos
 
-- Importação validada de backups.
+- Importação e exportação de backups.
 - Autenticação e sincronização com backend.
 - Testes de interação e testes ponta a ponta.
 - Disponibilização de uma versão pública para uso no navegador.

@@ -10,7 +10,6 @@ import {
   Command,
   ArrowDownLeft,
   CalendarDays,
-  Download,
   Menu,
   X,
   Circle,
@@ -68,7 +67,7 @@ export default function App({ userName, onLogout }: { userName: string; onLogout
     try {
       localStorage.setItem(storageKey, JSON.stringify(projects));
     } catch {
-      setToast('Não foi possível salvar neste navegador. Exporte seus dados.');
+      setToast('Não foi possível salvar as alterações neste navegador.');
     }
   }, [projects]);
   useEffect(() => {
@@ -112,19 +111,6 @@ export default function App({ userName, onLogout }: { userName: string; onLogout
           : p,
       ),
     );
-  }
-  function exportData() {
-    const blob = new Blob(
-      [JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), projects }, null, 2)],
-      { type: 'application/json' },
-    );
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'freelaflow-backup.json';
-    a.click();
-    URL.revokeObjectURL(url);
-    setToast('Backup exportado. Seus dados, com você.');
   }
   function card(p: Project) {
     return (
@@ -197,17 +183,6 @@ export default function App({ userName, onLogout }: { userName: string; onLogout
             <strong>{page}</strong>
           </div>
           <div className="top-actions">
-            <span className="local-status">
-              <i />
-              Salvo neste navegador
-            </span>
-            <button
-              className="icon-button"
-              aria-label="Exportar backup dos projetos"
-              onClick={exportData}
-            >
-              <Download size={17} />
-            </button>
             <span className="top-avatar">{avatar}</span>
             <button
               className="icon-button"
