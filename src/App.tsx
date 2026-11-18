@@ -16,7 +16,9 @@ import {
   CheckCircle2,
   LogOut,
 } from 'lucide-react';
-import { initials } from './lib/session';
+import useTheme from './lib/useTheme';
+import ProfileMenu from './components/ProfileMenu';
+import './themes.css';
 import ProjectDialog from './components/ProjectDialog';
 import Sidebar from './components/Sidebar';
 import LogoMark from './components/LogoMark';
@@ -40,7 +42,7 @@ function dateLabel(date: string) {
     .replace('.', '');
 }
 export default function App({ userName, onLogout }: { userName: string; onLogout: () => void }) {
-  const avatar = initials(userName);
+  const [theme, setTheme] = useTheme();
   const [projects, setProjects] = useState<Project[]>(load);
   const [page, setPage] = useState('Visão geral');
   const [search, setSearch] = useState('');
@@ -151,11 +153,13 @@ export default function App({ userName, onLogout }: { userName: string; onLogout
     c.toLowerCase().includes(search.toLowerCase()),
   );
   return (
-    <div className={`app ${collapsed ? 'sidebar-collapsed' : ''}`}>
+    <div className={`app ${collapsed ? 'sidebar-collapsed' : ''}`} data-theme={theme}>
       <a href="#main" className="skip-link">
         Pular para conteúdo
       </a>
       <Sidebar
+        theme={theme}
+        onThemeChange={setTheme}
         page={page}
         projectCount={active.length}
         userName={userName}
@@ -183,7 +187,7 @@ export default function App({ userName, onLogout }: { userName: string; onLogout
             <strong>{page}</strong>
           </div>
           <div className="top-actions">
-            <span className="top-avatar">{avatar}</span>
+            <ProfileMenu userName={userName} theme={theme} onThemeChange={setTheme} />
             <button
               className="icon-button"
               onClick={onLogout}
