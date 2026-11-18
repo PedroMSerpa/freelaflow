@@ -1,4 +1,8 @@
-# FreelaFlow ✳
+<p align="center">
+  <img src="public/brand/freelaflow-symbol.svg" width="112" height="112" alt="Símbolo do FreelaFlow: três formas curvas e um losango em tons de rosa" />
+</p>
+
+<h1 align="center">FreelaFlow</h1>
 
 [![CI](https://github.com/PedroMSerpa/freelaflow/actions/workflows/ci.yml/badge.svg)](https://github.com/PedroMSerpa/freelaflow/actions/workflows/ci.yml)
 
@@ -72,6 +76,10 @@ As fontes são carregadas pelo Google Fonts, com fallback para fontes locais. Os
 O símbolo da marca é um desenho vetorial original, sem letras: três superfícies curvas e um losango destacado representam um espaço de criação com uma ideia ganhando direção. Usa a paleta rosa do produto, com azul nas aplicações de fundo. O componente `LogoMark` compartilha o mesmo SVG entre apresentação, entrada, painel e sidebar; o favicon aplica o símbolo sobre um fundo azul.
 
 [Ver a identidade visual](docs/screenshots/brand-symbol.png) · [Símbolo SVG](public/brand/freelaflow-symbol.svg) · [Guia e arquivos para marketing](branding.md)
+
+![Nova identidade do FreelaFlow em versões colorida, azul e branca](docs/screenshots/brand-symbol.png)
+
+**Arquivos para marketing:** [baixar o kit completo em ZIP](docs/freelaflow-brand-kit.zip), com SVGs, PNGs transparentes em 2048 px, versões monocromáticas, avatar e capa. O favicon também usa a nova marca, em versões SVG e PNG.
 
 ## Dados e limites
 
