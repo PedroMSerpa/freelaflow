@@ -8,7 +8,7 @@ Um projeto contém cliente, categoria, valor contratado, data de entrega, status
 
 ## Persistência
 
-O armazenamento usa a chave versionada `freelaflow:projects:v1`. Na inicialização, dados passam por validação estrutural. Registros inválidos ou armazenamento inacessível levam ao conjunto de demonstração. Falhas de escrita exibem mensagem ao usuário. A exportação gera um JSON com versão e data.
+O armazenamento usa a chave versionada `freelaflow:projects:v1`. Na inicialização, dados passam por validação estrutural. Registros inválidos ou armazenamento inacessível levam ao conjunto de demonstração. Falhas de escrita exibem mensagem ao usuário. O cabeçalho exibe apenas o perfil e a saída; não há ação de exportação na interface atual.
 
 O localStorage é adequado para demonstração e dados não sensíveis. Não oferece autenticação, compartilhamento ou proteção contra limpeza do navegador. Uma versão comercial exigirá backend, isolamento por usuário e política de backups.
 

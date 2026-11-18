@@ -39,7 +39,7 @@ const questions = [
   },
   {
     q: 'Onde meus projetos ficam salvos?',
-    a: 'No navegador deste dispositivo. Não há sincronização entre aparelhos nem separação de projetos por nome. Você pode exportar um backup em JSON pelo painel.',
+    a: 'No navegador deste dispositivo. Não há sincronização entre aparelhos nem separação de projetos por nome.',
   },
   {
     q: 'O aplicativo recebe pagamentos?',
